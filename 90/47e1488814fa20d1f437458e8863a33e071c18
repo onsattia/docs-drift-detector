@@ -1,0 +1,21 @@
+.github/workflows/ci.yml
+  s_c679c394b46ecc::t_b02ad41d0ca3fd 1-87
+.pre-commit-config.yaml
+  s_c679c394b46ecc::t_66449188fd6fc5 1-7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "9047e1488814fa20d1f437458e8863a33e071c18",
+  "prompts": {},
+  "sessions": {
+    "s_c679c394b46ecc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_c679c394b46ecc",
+        "model": "unknown"
+      },
+      "human_author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  }
+}
