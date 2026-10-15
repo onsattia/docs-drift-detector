@@ -1,0 +1,25 @@
+.python-version
+  s_abcac853eced69::t_95a06fa59c72cc 1
+pyproject.toml
+  s_abcac853eced69::t_1977138c077e37 1-54
+src/docs_drift/__init__.py
+  s_abcac853eced69::t_63a2c061be2e10 1-3
+uv.lock
+  s_abcac853eced69::t_dae9f4f11d8687 1-530
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "e67d813a24a5419b015659dc52030243d630503b",
+  "prompts": {},
+  "sessions": {
+    "s_abcac853eced69": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_abcac853eced69",
+        "model": "unknown"
+      },
+      "human_author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  }
+}
