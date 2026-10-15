@@ -1,0 +1,21 @@
+src/docs_drift/cli.py
+  s_b75257bfbb4394::t_ba9be83023df7a 1-23
+tests/test_cli.py
+  s_b75257bfbb4394::t_4262b9755fc60b 1-21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "dbc24d4ff7dcbc4eb55f5d74598802189726d465",
+  "prompts": {},
+  "sessions": {
+    "s_b75257bfbb4394": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_b75257bfbb4394",
+        "model": "unknown"
+      },
+      "human_author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  }
+}
