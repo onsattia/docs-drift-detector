@@ -1,0 +1,61 @@
+.claude/commands/opsx/apply.md
+  s_8bb34bf4652c7c::t_c9b516f507221c 1-181
+.claude/commands/opsx/archive.md
+  s_8bb34bf4652c7c::t_f31e527e3d478e 1-225
+.claude/commands/opsx/explore.md
+  s_8bb34bf4652c7c::t_4f15e0589eaa81 1-193
+.claude/commands/opsx/propose.md
+  s_8bb34bf4652c7c::t_fae430614084fd 1-145
+.claude/commands/opsx/sync.md
+  s_8bb34bf4652c7c::t_0817003ccd0faf 1-258
+.claude/commands/opsx/update.md
+  s_8bb34bf4652c7c::t_22dddcca1fb45b 1-87
+.claude/skills/openspec-apply-change/SKILL.md
+  s_8bb34bf4652c7c::t_acb41ebb54bce8 1-185
+.claude/skills/openspec-archive-change/SKILL.md
+  s_8bb34bf4652c7c::t_83a1dfabf8fdd3 1-182
+.claude/skills/openspec-explore/SKILL.md
+  s_8bb34bf4652c7c::t_161ca33e06549a 1-308
+.claude/skills/openspec-propose/SKILL.md
+  s_8bb34bf4652c7c::t_a30d21e6927c33 1-149
+.claude/skills/openspec-sync-specs/SKILL.md
+  s_8bb34bf4652c7c::t_e10c9505ce12cd 1-262
+.claude/skills/openspec-update-change/SKILL.md
+  s_8bb34bf4652c7c::t_e81c2dc65a4dde 1-91
+.claude/skills/tdd/SKILL.md
+  s_8bb34bf4652c7c::t_2134fe579b1d6a 1-40
+CLAUDE.md
+  s_8bb34bf4652c7c::t_97b4c417b7d826 1-79
+openspec/changes/bootstrap-project/.openspec.yaml
+  s_8bb34bf4652c7c::t_0e067cc928a15d 1-2
+openspec/changes/bootstrap-project/design.md
+  s_8bb34bf4652c7c::t_0a24bc4255c166 1-61
+openspec/changes/bootstrap-project/proposal.md
+  s_8bb34bf4652c7c::t_0587476c770904 1-52
+openspec/changes/bootstrap-project/specs/project-packaging/spec.md
+  s_8bb34bf4652c7c::t_62fda699c98cba 1-46
+openspec/changes/bootstrap-project/specs/quality-gates/spec.md
+  s_8bb34bf4652c7c::t_44b97712be1c22 1-50
+openspec/changes/bootstrap-project/specs/source-registry/spec.md
+  s_8bb34bf4652c7c::t_f8069e69479851 1-51
+openspec/changes/bootstrap-project/tasks.md
+  s_8bb34bf4652c7c::t_36fbc008840ddd 1-56
+openspec/config.yaml
+  s_8bb34bf4652c7c::t_c8f18d65659928 1-35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "d9f844938bd7cd9e8d2d29f9d0a6f62d874cb549",
+  "prompts": {},
+  "sessions": {
+    "s_8bb34bf4652c7c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_8bb34bf4652c7c",
+        "model": "unknown"
+      },
+      "human_author": "Ons Attia <ons.attia@deliveryhero.com>"
+    }
+  }
+}
