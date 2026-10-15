@@ -1,0 +1,19 @@
+openspec/changes/bootstrap-project/tasks.md
+  s_e4dfa266a581bc::t_8d64d7fccb3190 3-6,10-16,20-22,26-32,36-41,46-50,56
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "97f04789b739764c2fe0d86e5316f3d412936ecc",
+  "prompts": {},
+  "sessions": {
+    "s_e4dfa266a581bc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_e4dfa266a581bc",
+        "model": "unknown"
+      },
+      "human_author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  }
+}
