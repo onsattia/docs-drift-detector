@@ -1,0 +1,19 @@
+CLAUDE.md
+  s_38a95bfdc9cc5c::t_1f55d5dd5ac4f0 16-32,65-66
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "97931a1c32bc95a2c2151acb4f5127446954c890",
+  "prompts": {},
+  "sessions": {
+    "s_38a95bfdc9cc5c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_38a95bfdc9cc5c",
+        "model": "unknown"
+      },
+      "human_author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  }
+}
