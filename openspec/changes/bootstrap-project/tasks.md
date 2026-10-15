@@ -51,6 +51,6 @@
 
 ## 7. Verification
 
-- [ ] 7.1 Run the full setup steps from the README on a fresh clone and record any corrections
+- [x] 7.1 Run the full setup steps from the README on a fresh clone and record any corrections
 - [ ] 7.2 Run ruff, mypy, pytest, and the container build locally and confirm all pass
 - [x] 7.3 Run `openspec validate bootstrap-project --strict` and resolve any findings
