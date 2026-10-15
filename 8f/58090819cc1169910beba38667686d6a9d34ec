@@ -1,0 +1,25 @@
+.editorconfig
+  s_018b86263c7684::t_08ea45aefc83aa 1-19
+.gitignore
+  s_018b86263c7684::t_519ecffb652e89 1-28
+CODEOWNERS
+  s_018b86263c7684::t_6128cd0df3fd46 1-2
+README.md
+  s_018b86263c7684::t_57711dc34a2655 1-52
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "8f58090819cc1169910beba38667686d6a9d34ec",
+  "prompts": {},
+  "sessions": {
+    "s_018b86263c7684": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_018b86263c7684",
+        "model": "unknown"
+      },
+      "human_author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  }
+}
