@@ -13,6 +13,23 @@ web service. It never applies doc changes automatically.
 - Keep changes small. One scenario or task per commit where practical.
 - Ask before adding a dependency, changing the model endpoint, or touching CI permissions.
 
+## Workflow
+
+- Never commit directly to `main`. Create a branch per change and open a pull request.
+- Lifecycle for a change: `openspec propose` → review the specs → implement tasks with `tdd` → verify → archive.
+  Sync delta specs into `openspec/specs/` before archiving so the main specs stay current.
+- Before every commit, run the checks in Commands: `ruff check`, `ruff format --check`, `mypy`, and `pytest`.
+  Do not commit with any of them failing.
+- Commit each finished task or scenario separately, with a conventional commit message. Keep the message about the
+  why, not a list of files.
+- Mark the task checkboxes in `tasks.md` as they are completed, so an interrupted session can resume from the change
+  directory alone.
+- Keep the Commands section above in sync when a command or flag changes.
+- Keep specs compact and easy to read. Use short requirements with one scenario each, plain language, and no
+  repeated background. If a spec needs a long explanation, move the rationale to `design.md`.
+- Before opening a PR, rebase on the latest `main` and confirm CI is green locally. Fix the cause of any failing
+  check rather than skipping it.
+
 ## Stack
 
 - Python 3.12, managed with uv (`uv.lock` is committed and authoritative)
@@ -45,7 +62,8 @@ uv run docs-drift registry validate examples/sources.yaml
 
 ## Code conventions
 
-- Match the surrounding code's style, naming, and comment density. Keep comments to the non-obvious "why".
+- Match the surrounding code's style and naming. Add a code comment only when it is very important, such as a
+  non-obvious constraint or a workaround. Do not comment what the code already says.
 - Type every function signature. No `Any` without a comment explaining why it is needed.
 - Public functions have docstrings only when behavior is not obvious from the name and types.
 - Errors are specific: include the field path, the file, or the claim that failed. Never swallow exceptions silently.
