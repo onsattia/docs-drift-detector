@@ -1,0 +1,21 @@
+CLAUDE.md
+  s_df56c9fe29cc8a::t_ae5caa1109c153 62
+openspec/config.yaml
+  s_df56c9fe29cc8a::t_ca5e157530339e 12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "157df0a5d0d36d4aa1e5d4e41f9264f99065b705",
+  "prompts": {},
+  "sessions": {
+    "s_df56c9fe29cc8a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_df56c9fe29cc8a",
+        "model": "unknown"
+      },
+      "human_author": "Ons Attia <ons.attia@deliveryhero.com>"
+    }
+  }
+}
