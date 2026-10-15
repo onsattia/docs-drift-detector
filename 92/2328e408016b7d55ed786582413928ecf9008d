@@ -1,0 +1,25 @@
+examples/sources.yaml
+  s_d98dafdc7a30c1::t_a9c5378d897d44 1-7
+src/docs_drift/cli.py
+  s_d98dafdc7a30c1::t_5d650b9887d645 1,7,10-11,28-44
+src/docs_drift/registry.py
+  s_d98dafdc7a30c1::t_3c4e39d276100f 1-121
+tests/test_registry.py
+  s_d98dafdc7a30c1::t_b2207f1cc4df1d 1-171
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "922328e408016b7d55ed786582413928ecf9008d",
+  "prompts": {},
+  "sessions": {
+    "s_d98dafdc7a30c1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_d98dafdc7a30c1",
+        "model": "unknown"
+      },
+      "human_author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  }
+}
