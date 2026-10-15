@@ -1,0 +1,7 @@
+projects:
+  billing-docs:
+    docs: docs/billing
+    openapi: docs/billing/openapi.yaml
+    code:
+      - repo: acme/billing-api
+        ref: main
