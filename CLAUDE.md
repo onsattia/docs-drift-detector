@@ -59,7 +59,7 @@ uv run docs-drift registry validate examples/sources.yaml
   issue or a draft proposal, and only when that feature is specified.
 - **Redact logs.** Log claim IDs, file paths, verdicts, and counts. Do not log full document text, code snippets from
   internal repos, or model prompts and responses in production runs.
-- **Approved endpoints only.** Internal docs and code go only to model endpoints approved for the organization data.
+- **Approved endpoints only.** Internal docs and code go only to model endpoints approved for the organization's data.
   Do not add a new provider or base URL without asking.
 - **Fixtures are synthetic.** Never commit real internal documentation or code as test data.
 - Data is internal documentation and falls under GDPR review. Treat any personal data found in docs as sensitive.
