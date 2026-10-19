@@ -2,13 +2,10 @@ package registry
 
 import (
 	"fmt"
-	"regexp"
 	"strings"
 )
 
-var repoPattern = regexp.MustCompile(`^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$`)
-
-// validate checks the untyped YAML structure and builds the Registry. It returns every error it finds.
+// validate checks the shape of the untyped YAML and builds the Registry. It returns every error it finds.
 func validate(raw any) (*Registry, error) {
 	v := &validator{}
 
