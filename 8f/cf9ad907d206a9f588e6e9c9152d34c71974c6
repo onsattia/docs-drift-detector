@@ -1,0 +1,27 @@
+internal/registry/checks.go
+  s_64a9ba3378d3a2::t_94b2c15111f838 9-10,51-52
+internal/registry/errors.go
+  s_64a9ba3378d3a2::t_19d9307e9ec5a5 6-8
+internal/registry/helpers.go
+  s_64a9ba3378d3a2::t_42f3f36b8a3c03 14-16
+internal/registry/structure.go
+  s_64a9ba3378d3a2::t_06961235a9825d 9-12,21,35-36,41-42,57-58,67
+internal/registry/types.go
+  s_64a9ba3378d3a2::t_abceac0e16a649 6-8,14-16,30-32,38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "8fcf9ad907d206a9f588e6e9c9152d34c71974c6",
+  "prompts": {},
+  "sessions": {
+    "s_64a9ba3378d3a2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_64a9ba3378d3a2",
+        "model": "unknown"
+      },
+      "human_author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  }
+}
