@@ -6,7 +6,7 @@ CI job and never edits documentation.
 
 ## Prerequisites
 
-- [uv](https://docs.astral.sh/uv/) (installs Python 3.12 for you)
+- [Go 1.26.9](https://go.dev/dl/) (the version in `go.mod`; Go downloads it automatically if your local toolchain is older)
 - Docker, only to build the container image locally
 
 ## Setup
@@ -14,33 +14,45 @@ CI job and never edits documentation.
 ```bash
 git clone <repository-url> docs-drift-detector
 cd docs-drift-detector
-uv sync --locked
-uv run pre-commit install
+go mod download
 ```
+
+Install the pre-commit hooks with [pre-commit](https://pre-commit.com/), then the Go linter that the hooks call:
+
+```bash
+pre-commit install
+go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.12.2
+```
+
+## Build
+
+```bash
+sh scripts/build.sh bin/docs-drift
+bin/docs-drift --version
+```
+
+`scripts/build.sh` reads the version from [VERSION](VERSION) and bakes it into the binary.
 
 ## Quality gates
 
 Run these locally before pushing. CI runs the same checks on every pull request to `main`.
 
 ```bash
-uv run ruff check .
-uv run ruff format --check .
-uv run mypy src tests
-uv run pytest
-uv run docs-drift --version
-uv run docs-drift registry validate examples/sources.yaml
+test -z "$(gofmt -l .)"
+golangci-lint run ./...
+go mod tidy -diff
+go mod verify
+sh scripts/coverage.sh
+govulncheck ./...
 docker build -t docs-drift:local . && docker run --rm docs-drift:local --version
 ```
 
+Install `govulncheck` with `go install golang.org/x/vuln/cmd/govulncheck@v1.1.4`.
+
 ## Test coverage
 
-`uv run pytest` fails if line coverage drops below **90%**. The floor is set by `--cov-fail-under` in
-`pyproject.toml`.
-
-## Type checking
-
-mypy runs in strict mode. PyYAML ships no type stubs, so `registry.py` carries a targeted
-`# type: ignore[import-untyped]`. Adding `types-PyYAML` as a dev dependency would remove it.
+`sh scripts/coverage.sh` fails if total statement coverage drops below **90%**. Override the floor for a local run
+with `COVERAGE_MIN=85 sh scripts/coverage.sh`; CI always uses the default.
 
 ## Source registry
 
@@ -48,5 +60,7 @@ mypy runs in strict mode. PyYAML ships no type stubs, so `registry.py` carries a
 [examples/sources.yaml](examples/sources.yaml) for the format.
 
 ```bash
-uv run docs-drift registry validate path/to/sources.yaml
+go run ./cmd/docs-drift registry validate path/to/sources.yaml
 ```
+
+The command reports every problem in the file in one run and exits non-zero if any are found.
