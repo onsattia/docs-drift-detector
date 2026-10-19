@@ -1,0 +1,21 @@
+.dockerignore
+  s_424b4e475533bd::t_7c85f4887dbe8f 4-7
+Dockerfile
+  s_424b4e475533bd::t_f8651c0177c4b2 3-10,12-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "77ea4be304863f32fe374b4f22ee9f1ad87de57a",
+  "prompts": {},
+  "sessions": {
+    "s_424b4e475533bd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_424b4e475533bd",
+        "model": "unknown"
+      },
+      "human_author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  }
+}
