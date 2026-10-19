@@ -1,0 +1,25 @@
+CLAUDE.md
+  s_bf640cfcb6b179::t_591b9212bebe53 21,53,56-57
+Makefile
+  s_bf640cfcb6b179::t_315d46ff6d2799 1-39
+README.md
+  s_bf640cfcb6b179::t_c51b28f901ecba 30,38
+openspec/changes/rewrite-in-go/tasks.md
+  s_bf640cfcb6b179::t_783b95a33730e1 50
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "4bdb2ed3fb4873f9aad00412725d22d983c0a6b6",
+  "prompts": {},
+  "sessions": {
+    "s_bf640cfcb6b179": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_bf640cfcb6b179",
+        "model": "unknown"
+      },
+      "human_author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  }
+}
