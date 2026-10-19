@@ -1,0 +1,23 @@
+VERSION
+  s_f13a74afae09a6::t_d466799f974369 1
+cmd/docs-drift/main_test.go
+  s_f13a74afae09a6::t_8c1e39957abd4f 1-32
+scripts/build.sh
+  s_f13a74afae09a6::t_d4de1a6c61d367 1-16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "d004f46ff0e0f395cee03c7b190b2aa7462f4e90",
+  "prompts": {},
+  "sessions": {
+    "s_f13a74afae09a6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_f13a74afae09a6",
+        "model": "unknown"
+      },
+      "human_author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  }
+}
