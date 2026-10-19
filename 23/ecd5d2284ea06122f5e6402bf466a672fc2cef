@@ -1,0 +1,19 @@
+.github/workflows/ci.yml
+  s_2041304e2279f2::t_17187013f5cfc0 15,19,21-24,26,30,32-34,40,42-43,45,49,51-53,70-71,78
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "23ecd5d2284ea06122f5e6402bf466a672fc2cef",
+  "prompts": {},
+  "sessions": {
+    "s_2041304e2279f2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_2041304e2279f2",
+        "model": "unknown"
+      },
+      "human_author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  }
+}
