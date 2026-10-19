@@ -6,6 +6,10 @@ import (
 )
 
 // validate checks the shape of the untyped YAML and builds the Registry. It returns every error it finds.
+//
+// The raw YAML arrives as nested map[string]any values. Each step asserts the type it expects
+// with raw.(map[string]any). The two-value form returns ok=false instead of panicking when the
+// assertion fails, and the code reports that as an error.
 func validate(raw any) (*Registry, error) {
 	v := &errorList{}
 
@@ -14,6 +18,7 @@ func validate(raw any) (*Registry, error) {
 		v.add("", "", "registry must be a mapping with a top-level projects key")
 		return nil, v.err()
 	}
+	// Reject unknown top-level keys before reading the rest, so a typo like "project:" is reported.
 	v.checkKeys("", "", top, []string{"projects"})
 
 	rawProjects, present := top["projects"]
@@ -27,10 +32,14 @@ func validate(raw any) (*Registry, error) {
 		return nil, v.err()
 	}
 
+	// &Registry returns a pointer, so callers share one value. The map must be created here;
+	// writing to a nil map panics in Go.
 	reg := &Registry{Projects: map[string]Project{}}
 	for _, name := range sortedKeys(projects) {
 		reg.Projects[name] = v.project(name, projects[name])
 	}
+	// Collected errors are returned only after every project has been checked. That is how
+	// one run reports all problems instead of stopping at the first.
 	if err := v.err(); err != nil {
 		return nil, err
 	}
@@ -45,6 +54,8 @@ func (v *errorList) project(name string, raw any) Project {
 	}
 	v.checkKeys(name, "", fields, []string{"docs", "openapi", "code"})
 
+	// The underscore discards the ok flag. A missing field is already recorded as an error by
+	// requiredString, so the empty string it returns does not need a second check.
 	var p Project
 	p.Docs, _ = v.requiredString(name, "", fields, "docs")
 	v.checkRelativePath(name, "docs", p.Docs)
@@ -53,6 +64,7 @@ func (v *errorList) project(name string, raw any) Project {
 		v.checkRelativePath(name, "openapi", p.OpenAPI)
 	}
 
+	// A missing key and an empty list are reported as separate problems, so the message is specific.
 	rawCode, present := fields["code"]
 	if !present {
 		v.add(name, "code", "at least one code source is required")
