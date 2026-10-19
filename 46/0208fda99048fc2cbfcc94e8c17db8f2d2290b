@@ -1,0 +1,23 @@
+.claude/skills/tdd/SKILL.md
+  s_3a3de64fa66bb2::t_9b3be4c1a34c65 3,10,14,19-20,22,28-31,41
+CLAUDE.md
+  s_3a3de64fa66bb2::t_fd6e7c514f8a8d 21-22,35-38,43-46,54,57-65,72,99,102
+README.md
+  s_3a3de64fa66bb2::t_db7b4443e53e3f 9,17,20-35,41-46,50,52,54-55,63,65-66
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "460208fda99048fc2cbfcc94e8c17db8f2d2290b",
+  "prompts": {},
+  "sessions": {
+    "s_3a3de64fa66bb2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_3a3de64fa66bb2",
+        "model": "unknown"
+      },
+      "human_author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  }
+}
