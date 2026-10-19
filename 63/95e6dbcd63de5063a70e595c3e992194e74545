@@ -1,0 +1,23 @@
+openspec/specs/project-packaging/spec.md
+  s_8c119c76db0546::t_a3241161718ec8 1-46
+openspec/specs/quality-gates/spec.md
+  s_8c119c76db0546::t_24ee593cb89c02 1-50
+openspec/specs/source-registry/spec.md
+  s_8c119c76db0546::t_71d721c0287fa1 1-51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "6395e6dbcd63de5063a70e595c3e992194e74545",
+  "prompts": {},
+  "sessions": {
+    "s_8c119c76db0546": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_8c119c76db0546",
+        "model": "unknown"
+      },
+      "human_author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  }
+}
