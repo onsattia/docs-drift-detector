@@ -9,7 +9,7 @@ import (
 var repoPattern = regexp.MustCompile(`^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$`)
 
 // requiredString returns the string at fields[key] and reports an error if it is missing or not a string.
-func (v *validator) requiredString(project, path string, fields map[string]any, key string) (string, bool) {
+func (v *errorList) requiredString(project, path string, fields map[string]any, key string) (string, bool) {
 	raw, present := fields[key]
 	if !present {
 		v.add(project, joinPath(path, key), "field required")
@@ -24,7 +24,7 @@ func (v *validator) requiredString(project, path string, fields map[string]any, 
 }
 
 // checkKeys reports fields that are not allowed. Credential-like names get their own message.
-func (v *validator) checkKeys(project, path string, fields map[string]any, allowed []string) {
+func (v *errorList) checkKeys(project, path string, fields map[string]any, allowed []string) {
 	for _, key := range sortedKeys(fields) {
 		switch {
 		case isCredentialKey(key):
@@ -37,7 +37,7 @@ func (v *validator) checkKeys(project, path string, fields map[string]any, allow
 }
 
 // checkRelativePath rejects absolute paths and paths that climb out of the docs repository with "..".
-func (v *validator) checkRelativePath(project, field, value string) {
+func (v *errorList) checkRelativePath(project, field, value string) {
 	if value == "" {
 		return
 	}

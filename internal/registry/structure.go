@@ -7,7 +7,7 @@ import (
 
 // validate checks the shape of the untyped YAML and builds the Registry. It returns every error it finds.
 func validate(raw any) (*Registry, error) {
-	v := &validator{}
+	v := &errorList{}
 
 	top, ok := raw.(map[string]any)
 	if !ok {
@@ -37,7 +37,7 @@ func validate(raw any) (*Registry, error) {
 	return reg, nil
 }
 
-func (v *validator) project(name string, raw any) Project {
+func (v *errorList) project(name string, raw any) Project {
 	fields, ok := raw.(map[string]any)
 	if !ok {
 		v.add(name, "", "must be a mapping")
@@ -72,7 +72,7 @@ func (v *validator) project(name string, raw any) Project {
 	return p
 }
 
-func (v *validator) codeSource(project, path string, raw any) CodeSource {
+func (v *errorList) codeSource(project, path string, raw any) CodeSource {
 	fields, ok := raw.(map[string]any)
 	if !ok {
 		v.add(project, path, "must be a mapping")
