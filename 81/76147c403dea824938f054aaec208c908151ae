@@ -1,0 +1,25 @@
+openspec/changes/rewrite-in-go/.openspec.yaml
+  s_2c0a985ed3b1f5::t_9cce6f017cdab5 1-3
+openspec/changes/rewrite-in-go/design.md
+  s_2c0a985ed3b1f5::t_4cecbe64d2ce79 1-57
+openspec/changes/rewrite-in-go/proposal.md
+  s_2c0a985ed3b1f5::t_dbce6561e95d5e 1-30
+openspec/changes/rewrite-in-go/tasks.md
+  s_2c0a985ed3b1f5::t_e3d2a3d2b084ed 1-60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "8176147c403dea824938f054aaec208c908151ae",
+  "prompts": {},
+  "sessions": {
+    "s_2c0a985ed3b1f5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_2c0a985ed3b1f5",
+        "model": "unknown"
+      },
+      "human_author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  }
+}
