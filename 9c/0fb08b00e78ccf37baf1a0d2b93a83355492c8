@@ -1,0 +1,19 @@
+internal/registry/types.go
+  s_6518a30acbfa72::t_66e190e23730ed 1-30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "9c0fb08b00e78ccf37baf1a0d2b93a83355492c8",
+  "prompts": {},
+  "sessions": {
+    "s_6518a30acbfa72": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_6518a30acbfa72",
+        "model": "unknown"
+      },
+      "human_author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  }
+}
