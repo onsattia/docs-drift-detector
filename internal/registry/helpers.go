@@ -11,9 +11,6 @@ func joinPath(parent, key string) string {
 }
 
 // sortedKeys returns the keys of m in order, so errors come out in a stable order.
-//
-// [T any] is a type parameter (Go generics). It lets one function accept a map of any value
-// type. Without it we would need a copy of this function for each value type.
 func sortedKeys[T any](m map[string]T) []string {
 	keys := make([]string, 0, len(m))
 	for k := range m {

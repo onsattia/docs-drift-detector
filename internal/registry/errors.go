@@ -3,9 +3,6 @@ package registry
 import "strings"
 
 // errorList collects error messages so that one pass reports every problem in the file.
-//
-// Methods use a pointer receiver (v *errorList) so every call appends to the same slice.
-// A value receiver would work on a copy and the messages would be lost.
 type errorList struct {
 	errs []string
 }

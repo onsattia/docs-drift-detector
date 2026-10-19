@@ -6,8 +6,6 @@ import (
 	"strings"
 )
 
-// repoPattern matches owner/name with one slash and no spaces. It is compiled once at package
-// load, because compiling a regex on every check would waste time.
 var repoPattern = regexp.MustCompile(`^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$`)
 
 // requiredString returns the string at fields[key] and reports an error if it is missing or not a string.
@@ -48,8 +46,6 @@ func (v *errorList) checkRelativePath(project, field, value string) {
 	}
 }
 
-// credentialWords are the name parts that mark a field as a secret. Matching whole words (not
-// substrings) means "keyboard" does not match "key".
 var credentialWords = map[string]bool{"token": true, "password": true, "secret": true, "key": true}
 
 // isCredentialKey reports whether any word in the key, split on _ or -, is a credential word.
