@@ -47,6 +47,7 @@
 - [x] 7.1 Update `.github/workflows/ci.yml` to run the Go gate, keeping the secret-scan job
 - [x] 7.2 Update `CLAUDE.md` (stack, layout, commands) and the `tdd` skill (`go test` instead of pytest)
 - [x] 7.3 Update the README setup and test instructions
+- [x] 7.4 Add a Makefile so every quality gate and build step has one named target that CI and contributors share
 
 ## 8. Remove the Python implementation
 

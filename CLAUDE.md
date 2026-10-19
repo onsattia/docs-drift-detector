@@ -18,8 +18,7 @@ web service. It never applies doc changes automatically.
 - Never commit directly to `main`. Create a branch per change and open a pull request.
 - Lifecycle for a change: `openspec propose` → review the specs → implement tasks with `tdd` → verify → archive.
   Sync delta specs into `openspec/specs/` before archiving so the main specs stay current.
-- Before every commit, run the checks in Commands: `gofmt`, `golangci-lint`, `go mod tidy -diff`, and the coverage
-  script. Do not commit with any of them failing.
+- Before every commit, run `make check`. Do not commit with any of its gates failing.
 - Commit each finished task or scenario separately, with a conventional commit message. Keep the message about the
   why, not a list of files.
 - Mark the task checkboxes in `tasks.md` as they are completed, so an interrupted session can resume from the change
@@ -51,9 +50,11 @@ openspec/            specs, changes, and project config
 
 ## Commands
 
-Update this list when the commands change.
+Run `make help` for the list. Update the Makefile and this section together when a command changes.
 
 ```bash
+make check                          # every quality gate CI runs
+make build                          # bin/docs-drift with the version from VERSION
 go mod download                       # fetch modules
 sh scripts/build.sh bin/docs-drift    # build with the version from VERSION
 sh scripts/coverage.sh                # tests with coverage floor (90%)

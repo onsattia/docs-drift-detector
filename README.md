@@ -27,7 +27,7 @@ go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.12.2
 ## Build
 
 ```bash
-sh scripts/build.sh bin/docs-drift
+make build
 bin/docs-drift --version
 ```
 
@@ -35,7 +35,7 @@ bin/docs-drift --version
 
 ## Quality gates
 
-Run these locally before pushing. CI runs the same checks on every pull request to `main`.
+Run `make check` locally before pushing. It runs the same gates CI runs on every pull request to `main`. Run `make help` to see every target.
 
 ```bash
 test -z "$(gofmt -l .)"
