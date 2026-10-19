@@ -1,0 +1,23 @@
+cmd/docs-drift/main.go
+  s_bcb144053a09d7::t_0141791116643f 1-14
+internal/cli/cli.go
+  s_bcb144053a09d7::t_b818f73a5e8828 1-111
+internal/cli/cli_test.go
+  s_bcb144053a09d7::t_a32eaa5fdd283b 1-82
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "3229bcd0d19b4e492791fd3a5600fa7fcf7faf27",
+  "prompts": {},
+  "sessions": {
+    "s_bcb144053a09d7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_bcb144053a09d7",
+        "model": "unknown"
+      },
+      "human_author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  }
+}
