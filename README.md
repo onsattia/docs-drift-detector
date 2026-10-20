@@ -54,6 +54,73 @@ Install `govulncheck` with `go install golang.org/x/vuln/cmd/govulncheck@v1.1.4`
 `sh scripts/coverage.sh` fails if total statement coverage drops below **90%**. Override the floor for a local run
 with `COVERAGE_MIN=85 sh scripts/coverage.sh`; CI always uses the default.
 
+## Testing
+
+Run the automated checks first. They cover the same gates CI runs:
+
+```bash
+make check
+```
+
+Then check the behavior by hand. Run these from the project root.
+
+Build the binary:
+
+```bash
+make build
+```
+
+Check the version and help:
+
+```bash
+bin/docs-drift --version
+bin/docs-drift --help
+```
+
+Validate the example registry. You should see a summary and exit code 0:
+
+```bash
+bin/docs-drift registry validate examples/sources.yaml
+echo $?
+```
+
+Try a bad registry. Save this as `/tmp/bad.yaml`:
+
+```yaml
+projects:
+  billing-docs:
+    docs: ../escape
+    token: abc123
+    code:
+      - repo: not-a-repo
+```
+
+Then run:
+
+```bash
+bin/docs-drift registry validate /tmp/bad.yaml
+echo $?
+```
+
+You should see four errors, one per line: the `token` field, the `..` in the docs path, the `repo` format, and the missing `ref`. The exit code should be 1. The token value `abc123` should not appear anywhere in the output.
+
+Check the unknown-command behavior. Usage goes to stderr and the exit code is 1:
+
+```bash
+bin/docs-drift nope
+echo $?
+```
+
+Test the container the same way:
+
+```bash
+make image
+docker run --rm docs-drift:local --version
+docker run --rm -v "$PWD/examples:/data:ro" docs-drift:local registry validate /data/sources.yaml
+```
+
+Run `make help` to list the other targets.
+
 ## Source registry
 
 `sources.yaml` maps documentation folders to the code repositories they describe. See
