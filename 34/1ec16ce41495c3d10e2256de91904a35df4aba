@@ -1,0 +1,27 @@
+.claude/hooks/block-go-sum.sh
+  s_0737c5f0dc0995::t_b9b540c5166f4e 1-10
+.claude/hooks/block-main-commit.sh
+  s_0737c5f0dc0995::t_6814ff117702ef 1-13
+.claude/hooks/gofmt-check.sh
+  s_0737c5f0dc0995::t_d17459810a763f 1-13
+.claude/settings.json
+  s_0737c5f0dc0995::t_5d55c4e761c634 1-44
+CLAUDE.md
+  s_0737c5f0dc0995::t_eb678b8929a82c 18,21,26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "341ec16ce41495c3d10e2256de91904a35df4aba",
+  "prompts": {},
+  "sessions": {
+    "s_0737c5f0dc0995": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_0737c5f0dc0995",
+        "model": "unknown"
+      },
+      "human_author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  }
+}
