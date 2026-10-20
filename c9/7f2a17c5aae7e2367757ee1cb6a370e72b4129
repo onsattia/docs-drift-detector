@@ -1,0 +1,25 @@
+openspec/changes/llm-judge-design/.openspec.yaml
+  s_6864d5802ef42a::t_f0643ef083bf7d 1-3
+openspec/changes/llm-judge-design/design.md
+  s_6864d5802ef42a::t_f4459589638e26 1-56
+openspec/changes/llm-judge-design/proposal.md
+  s_6864d5802ef42a::t_e68bb82e4dad19 1-25
+openspec/changes/llm-judge-design/tasks.md
+  s_6864d5802ef42a::t_1e3970e40bf75f 1-13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "c97f2a17c5aae7e2367757ee1cb6a370e72b4129",
+  "prompts": {},
+  "sessions": {
+    "s_6864d5802ef42a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_6864d5802ef42a",
+        "model": "unknown"
+      },
+      "human_author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  }
+}
