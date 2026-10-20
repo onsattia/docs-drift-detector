@@ -75,6 +75,23 @@ bin/docs-drift registry validate examples/sources.yaml
 - Errors are specific: include the field path, the file, or the claim that failed. Never swallow exceptions silently.
 - Commit messages use conventional commits (`feat:`, `fix:`, `test:`, `chore:`, `docs:`).
 
+### Naming
+
+- **Name a thing for what it holds or does, not its shape.** `errs` for an error collector, `messages` for the list
+  inside it. Avoid one-letter names outside short loops and receivers.
+- **Keep receiver names short and the same across one type.** Every method on `errorList` uses `errs`. Do not name a
+  receiver after one of its fields.
+- **Use the domain's words from the specs.** `docs`, `code`, `repo`, `ref`, `openapi`, `claim`, and `verdict` mean the
+  same thing everywhere. Do not add synonyms.
+- **Do not repeat the package name in exported identifiers.** Write `registry.Load`, not `registry.LoadRegistry`.
+- **Name files for the concern they hold,** one concern per file. Two names that differ by a few letters or sound alike,
+  such as `validate.go` and `validator.go`, make the code hard to navigate, so pick names that cannot be confused.
+- **Use the Go conventions for common roles:** `err` for errors, `ok` or `found` for a second boolean result, `ctx` for a
+  context, and `i` or `k` for loop indexes.
+- **Name tests after the behavior or scenario,** such as `TestRegistryRejectsPathEscapingRepo`, so the mapping to specs
+  is visible.
+- **Prefer full words to abbreviations,** except the common Go roles above.
+
 ## Security and data handling
 
 - **No secrets in the repo, logs, fixtures, or images.** Tokens come from the CI secret store or the runtime
