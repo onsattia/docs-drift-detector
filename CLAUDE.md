@@ -68,7 +68,7 @@ bin/docs-drift registry validate examples/sources.yaml
 
 ## Code conventions
 
-- Shared coding rules live in `rules/` (`rules/common/coding-style.md`: immutability, KISS/DRY/YAGNI, file size,
+- Shared coding rules live in `.claude/rules/` (`.claude/rules/common/coding-style.md`: immutability, KISS/DRY/YAGNI, file size,
   error handling, validation). Follow them for all code. Where a language rule or the Go conventions below differ,
   the Go conventions win.
 - Match the surrounding code's style and naming. Add a code comment only when it is very important, such as a
