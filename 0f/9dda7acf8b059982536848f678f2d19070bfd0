@@ -1,0 +1,19 @@
+.claude/skills/search-first/SKILL.md
+  s_ccacabf7cfae2b::t_65bb98b121dbd9 1-79
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "0f9dda7acf8b059982536848f678f2d19070bfd0",
+  "prompts": {},
+  "sessions": {
+    "s_ccacabf7cfae2b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_ccacabf7cfae2b",
+        "model": "unknown"
+      },
+      "human_author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  }
+}
