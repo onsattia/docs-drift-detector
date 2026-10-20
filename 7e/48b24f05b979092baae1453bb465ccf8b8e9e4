@@ -1,0 +1,21 @@
+CLAUDE.md
+  s_8f2e145b1641b6::t_a0233fd6cc36bb 71-73
+rules/common/coding-style.md
+  s_8f2e145b1641b6::t_1b57244872d768 1-97
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "7e48b24f05b979092baae1453bb465ccf8b8e9e4",
+  "prompts": {},
+  "sessions": {
+    "s_8f2e145b1641b6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_8f2e145b1641b6",
+        "model": "unknown"
+      },
+      "human_author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  }
+}
