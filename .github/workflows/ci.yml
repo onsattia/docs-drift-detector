@@ -12,55 +12,45 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  ruff-check:
+  lint:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
-      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
         with:
-          version: "0.12.21"
-      - run: uv sync --locked
-      - run: uv run ruff check .
+          go-version-file: go.mod
+      - run: test -z "$(gofmt -l .)" || { gofmt -l .; exit 1; }
+      - run: go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.12.2
+      - run: golangci-lint run ./...
 
-  ruff-format:
+  modules:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
-      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
         with:
-          version: "0.12.21"
-      - run: uv sync --locked
-      - run: uv run ruff format --check .
-
-  mypy:
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
-      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
-        with:
-          version: "0.12.21"
-      - run: uv sync --locked
-      - run: uv run mypy src tests
+          go-version-file: go.mod
+      - run: go mod tidy -diff
+      - run: go mod verify
 
   test:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
-      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
         with:
-          version: "0.12.21"
-      - run: uv sync --locked
-      - run: uv run pytest
+          go-version-file: go.mod
+      - run: sh scripts/coverage.sh
 
-  dependency-audit:
+  vulncheck:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
-      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
         with:
-          version: "0.12.21"
-      - run: uv export --locked --no-hashes --no-emit-project --format requirements-txt --output-file requirements-audit.txt
-      - run: uvx --from pip-audit==2.10.1 pip-audit --requirement requirements-audit.txt
+          go-version-file: go.mod
+      - run: go install golang.org/x/vuln/cmd/govulncheck@v1.1.4
+      - run: govulncheck ./...
 
   secret-scan:
     runs-on: ubuntu-24.04
@@ -77,11 +67,14 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - id: version
+        run: echo "version=$(cat VERSION)" >> "$GITHUB_OUTPUT"
       - uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f # v3
       - uses: docker/build-push-action@10e90e3645eae34f1e60eeb005ba3a3d33f178e8 # v6
         with:
           context: .
           push: false
           load: true
+          build-args: VERSION=${{ steps.version.outputs.version }}
           tags: docs-drift:ci
       - run: docker run --rm docs-drift:ci --version

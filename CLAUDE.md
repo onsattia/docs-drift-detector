@@ -18,8 +18,7 @@ web service. It never applies doc changes automatically.
 - Never commit directly to `main`. Create a branch per change and open a pull request.
 - Lifecycle for a change: `openspec propose` → review the specs → implement tasks with `tdd` → verify → archive.
   Sync delta specs into `openspec/specs/` before archiving so the main specs stay current.
-- Before every commit, run the checks in Commands: `ruff check`, `ruff format --check`, `mypy`, and `pytest`.
-  Do not commit with any of them failing.
+- Before every commit, run `make check`. Do not commit with any of its gates failing.
 - Commit each finished task or scenario separately, with a conventional commit message. Keep the message about the
   why, not a list of files.
 - Mark the task checkboxes in `tasks.md` as they are completed, so an interrupted session can resume from the change
@@ -32,16 +31,18 @@ web service. It never applies doc changes automatically.
 
 ## Stack
 
-- Python 3.12, managed with uv (`uv.lock` is committed and authoritative)
-- Typer for the CLI, Pydantic v2 for data models, PyYAML for registry parsing
-- pytest + pytest-cov, ruff (lint and format), mypy in strict mode
-- GitHub Actions for CI, a multi-stage Dockerfile for the runtime image
+- Go 1.26.9, pinned in `go.mod` (`go.sum` is committed and authoritative)
+- cobra for the CLI, `gopkg.in/yaml.v3` for registry parsing
+- `go test` with a coverage floor, gofmt, golangci-lint, govulncheck
+- GitHub Actions for CI, a multi-stage Dockerfile that produces a static binary on a distroless image
 
 ## Layout
 
 ```
-src/docs_drift/      package code (src layout)
-tests/               pytest suite; fixtures under tests/fixtures/
+cmd/docs-drift/      binary entry point
+internal/cli/        cobra command tree
+internal/registry/   sources.yaml parsing and validation
+scripts/             build.sh (version injection) and coverage.sh (floor check)
 examples/            sample sources.yaml files
 openspec/            specs, changes, and project config
 .claude/skills/      project skills (tdd)
@@ -49,22 +50,27 @@ openspec/            specs, changes, and project config
 
 ## Commands
 
-Planned until the `bootstrap-project` change is applied. Update this list when the commands change.
+Run `make help` for the list. Update the Makefile and this section together when a command changes.
 
 ```bash
-uv sync --locked                      # install from lockfile
-uv run pytest                         # tests with coverage
-uv run ruff check . && uv run ruff format --check .
-uv run mypy src tests
-uv run docs-drift --version
-uv run docs-drift registry validate examples/sources.yaml
+make check                          # every quality gate CI runs
+make build                          # bin/docs-drift with the version from VERSION
+go mod download                       # fetch modules
+sh scripts/build.sh bin/docs-drift    # build with the version from VERSION
+sh scripts/coverage.sh                # tests with coverage floor (90%)
+gofmt -l .                            # must print nothing
+golangci-lint run ./...
+go mod tidy -diff && go mod verify
+govulncheck ./...
+bin/docs-drift --version
+bin/docs-drift registry validate examples/sources.yaml
 ```
 
 ## Code conventions
 
 - Match the surrounding code's style and naming. Add a code comment only when it is very important, such as a
   non-obvious constraint or a workaround. Do not comment what the code already says.
-- Type every function signature. No `Any` without a comment explaining why it is needed.
+- Type every function signature. No `any` without a comment explaining why it is needed.
 - Public functions have docstrings only when behavior is not obvious from the name and types.
 - Errors are specific: include the field path, the file, or the claim that failed. Never swallow exceptions silently.
 - Commit messages use conventional commits (`feat:`, `fix:`, `test:`, `chore:`, `docs:`).
@@ -91,7 +97,7 @@ uv run docs-drift registry validate examples/sources.yaml
 
 ## Do not
 
-- Do not edit `uv.lock` by hand. Use `uv add` or `uv lock`.
+- Do not edit `go.sum` by hand. Use `go get` or `go mod tidy`.
 - Do not commit `.env` files, API keys, or tokens, even for testing.
 - Do not disable a failing CI check to merge. Fix the cause or ask for review.
-- Do not change the Python version or the base image digest without an explicit request.
+- Do not change the Go version or the base image digests without an explicit request.

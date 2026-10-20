@@ -1,20 +1,8 @@
-# Python
-__pycache__/
-*.py[cod]
-*.egg-info/
-build/
+# Go build and coverage output
+bin/
 dist/
-.venv/
-venv/
-
-# Tooling caches
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-.coverage
-.coverage.*
-htmlcov/
-coverage.xml
+coverage.out
+coverage.html
 
 # Editors and OS
 .idea/

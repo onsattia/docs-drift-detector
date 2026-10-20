@@ -1,12 +1,7 @@
 .git
 .github
-.venv
-venv
-**/__pycache__
-**/*.py[cod]
-.pytest_cache
-.mypy_cache
-.ruff_cache
-.coverage*
-htmlcov
 openspec
+bin
+dist
+coverage.out
+coverage.html
