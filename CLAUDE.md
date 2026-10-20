@@ -15,15 +15,15 @@ web service. It never applies doc changes automatically.
 
 ## Workflow
 
-- Never commit directly to `main`. Create a branch per change and open a pull request.
+- IMPORTANT: Never commit directly to `main`. Create a branch per change and open a pull request.
 - Lifecycle for a change: `openspec propose` → review the specs → implement tasks with `tdd` → verify → archive.
   Sync delta specs into `openspec/specs/` before archiving so the main specs stay current.
-- Before every commit, run `make check`. Do not commit with any of its gates failing.
+- IMPORTANT: Before every commit, run `make check`. Do not commit with any of its gates failing.
 - Commit each finished task or scenario separately, with a conventional commit message. Keep the message about the
   why, not a list of files.
 - Mark the task checkboxes in `tasks.md` as they are completed, so an interrupted session can resume from the change
   directory alone.
-- Keep the Commands section above in sync when a command or flag changes.
+- Run `make help` to list commands. When a command changes, update its `##` comment in the Makefile.
 - Keep specs compact and easy to read. Use short requirements with one scenario each, plain language, and no
   repeated background. If a spec needs a long explanation, move the rationale to `design.md`.
 - Before opening a PR, rebase on the latest `main` and confirm CI is green locally. Fix the cause of any failing
@@ -35,36 +35,6 @@ web service. It never applies doc changes automatically.
 - cobra for the CLI, `gopkg.in/yaml.v3` for registry parsing
 - `go test` with a coverage floor, gofmt, golangci-lint, govulncheck
 - GitHub Actions for CI, a multi-stage Dockerfile that produces a static binary on a distroless image
-
-## Layout
-
-```
-cmd/docs-drift/      binary entry point
-internal/cli/        cobra command tree
-internal/registry/   sources.yaml parsing and validation
-scripts/             build.sh (version injection) and coverage.sh (floor check)
-examples/            sample sources.yaml files
-openspec/            specs, changes, and project config
-.claude/skills/      project skills (tdd)
-```
-
-## Commands
-
-Run `make help` for the list. Update the Makefile and this section together when a command changes.
-
-```bash
-make check                          # every quality gate CI runs
-make build                          # bin/docs-drift with the version from VERSION
-go mod download                       # fetch modules
-sh scripts/build.sh bin/docs-drift    # build with the version from VERSION
-sh scripts/coverage.sh                # tests with coverage floor (90%)
-gofmt -l .                            # must print nothing
-golangci-lint run ./...
-go mod tidy -diff && go mod verify
-govulncheck ./...
-bin/docs-drift --version
-bin/docs-drift registry validate examples/sources.yaml
-```
 
 ## Code conventions
 
