@@ -1,0 +1,24 @@
+README.md
+  s_81515e25d8e921::t_467178ba4b7e11 57-123
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "aadc8c33977207786a82d5f46b4c981b961d11c0",
+  "prompts": {},
+  "humans": {
+    "h_8f69229b826049": {
+      "author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  },
+  "sessions": {
+    "s_81515e25d8e921": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_81515e25d8e921",
+        "model": "unknown"
+      },
+      "human_author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  }
+}
