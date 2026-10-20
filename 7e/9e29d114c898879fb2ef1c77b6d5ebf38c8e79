@@ -1,0 +1,24 @@
+openspec/changes/archive/2026-10-20-rewrite-in-go/tasks.md
+  s_f0450f6293c226::t_f203f61d85e5f1 4,61
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "7e9e29d114c898879fb2ef1c77b6d5ebf38c8e79",
+  "prompts": {},
+  "humans": {
+    "h_8f69229b826049": {
+      "author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  },
+  "sessions": {
+    "s_f0450f6293c226": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_f0450f6293c226",
+        "model": "unknown"
+      },
+      "human_author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  }
+}
