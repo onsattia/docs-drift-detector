@@ -1,7 +1,7 @@
 ## 1. Approval and baseline
 
 - [x] 1.1 Get approval for the Go dependencies listed in design.md (cobra, gopkg.in/yaml.v3, golangci-lint, govulncheck)
-- [ ] 1.2 Turn each scenario in `openspec/specs/project-packaging` and `openspec/specs/quality-gates` into a checklist in the PR description, so the Go version is checked against the same scenarios
+- [x] 1.2 Turn each scenario in `openspec/specs/project-packaging` and `openspec/specs/quality-gates` into a checklist in the PR description, so the Go version is checked against the same scenarios
 - [x] 1.3 Confirm the Python suite passes on `main` to establish the baseline
 
 ## 2. Go module skeleton
@@ -58,4 +58,4 @@
 ## 9. Archive
 
 - [x] 9.1 Run `openspec validate rewrite-in-go` and fix any issues
-- [ ] 9.2 Archive the change with `openspec-archive-change` once merged
+- [x] 9.2 Archive the change with `openspec-archive-change` once merged
