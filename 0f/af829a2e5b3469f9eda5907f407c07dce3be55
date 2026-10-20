@@ -1,0 +1,19 @@
+.claude/agents/code-reviewer.md
+  s_0761f9a260f97e::t_717b5a38eec39d 1-323
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "0faf829a2e5b3469f9eda5907f407c07dce3be55",
+  "prompts": {},
+  "sessions": {
+    "s_0761f9a260f97e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_0761f9a260f97e",
+        "model": "unknown"
+      },
+      "human_author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  }
+}
