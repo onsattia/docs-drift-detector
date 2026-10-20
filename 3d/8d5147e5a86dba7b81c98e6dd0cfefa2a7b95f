@@ -1,0 +1,28 @@
+internal/registry/checks.go
+  s_372b9272ace710::t_1bcde8d47882aa 12,15,20,27,31,34,40,45
+internal/registry/errors.go
+  s_372b9272ace710::t_e3c9e8e00fb02e 7,11,20,24-25,28
+internal/registry/structure.go
+  s_372b9272ace710::t_61040bfd7891cd 10,14-15,17,21-22,26-27,32,34,40,43,46,49-50,52-53,58,63,67,70,75,78,81,84,86,88,90
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "3d8d5147e5a86dba7b81c98e6dd0cfefa2a7b95f",
+  "prompts": {},
+  "humans": {
+    "h_8f69229b826049": {
+      "author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  },
+  "sessions": {
+    "s_372b9272ace710": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_372b9272ace710",
+        "model": "unknown"
+      },
+      "human_author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  }
+}
