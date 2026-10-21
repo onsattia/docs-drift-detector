@@ -22,6 +22,9 @@
       "Bash(gcloud * list*)",
       "Bash(sentry-cli info*)"
     ],
+    "ask": [
+      "Bash(git push*)"
+    ],
     "deny": [
       "Bash(git push origin main*)"
     ]
