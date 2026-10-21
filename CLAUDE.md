@@ -29,6 +29,11 @@ web service. It never applies doc changes automatically.
 - Before opening a PR, rebase on the latest `main` and confirm CI is green locally. Fix the cause of any failing
   check rather than skipping it.
 
+## Tools
+
+- Use CLI tools for external services: `gh` for GitHub (issues, PRs, reviews, comments), and `aws`, `gcloud`, or `sentry-cli` when those services are involved. Prefer them over raw API calls.
+- For a CLI you have not used in this repo, run `<tool> --help` first instead of guessing flags.
+
 ## Stack
 
 - Go 1.26.9, pinned in `go.mod` (`go.sum` is committed and authoritative)

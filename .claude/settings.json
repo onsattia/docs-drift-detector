@@ -11,7 +11,19 @@
       "Bash(git status*)",
       "Bash(git diff*)",
       "Bash(git log*)",
-      "Bash(gh pr view*)"
+      "Bash(gh pr view*)",
+      "Bash(gh pr list*)",
+      "Bash(gh pr checks*)",
+      "Bash(gh issue view*)",
+      "Bash(gh issue list*)",
+      "Bash(aws * describe-*)",
+      "Bash(aws * list-*)",
+      "Bash(gcloud * describe*)",
+      "Bash(gcloud * list*)",
+      "Bash(sentry-cli info*)"
+    ],
+    "ask": [
+      "Bash(git push*)"
     ],
     "deny": [
       "Bash(git push origin main*)"
