@@ -1,0 +1,19 @@
+.claude/settings.json
+  s_9f4bc3dbfc147c::t_f398cbe9745754 25-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "e85deeccdab743dca96209e14d8019de22c6018d",
+  "prompts": {},
+  "sessions": {
+    "s_9f4bc3dbfc147c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_9f4bc3dbfc147c",
+        "model": "unknown"
+      },
+      "human_author": "onsattia <18750950+onsattia@users.noreply.github.com>"
+    }
+  }
+}
